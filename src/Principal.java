@@ -15,6 +15,6 @@ public class Principal {
     };
 
     TiempoEnvio.imprimirTiempoEnvio(envios);
-    ModeloEnvio.crearTipoEnvio(envios[2]);
+    ModeloEnvio.crearTipoEnvio(envios);
   }
 }
