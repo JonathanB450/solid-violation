@@ -1,20 +1,28 @@
+import Envio.Envio;
+import Envio.EnvioIntermunicipal;
+import Envio.EnvioInternacional;
+import Envio.EnvioMunicipal;
+
 public class Principal {
 
   public static void main(String[] args) {
-    Envio[] envios = {
-        new Envio("Municipal",5000),
-        new Envio("Intermunicipal",15000),
-        new Envio("Internacional",25000)
-    };
-    imprimirTiempoDeEnvio(envios);
-    imprimirTiempoDeEnvio(envios);
-  }
+    EnvioMunicipal[] enviosMunicipales = {new EnvioMunicipal(5000)};
+    EnvioIntermunicipal[] enviosIntermunicipales = {new EnvioIntermunicipal(15000)};
+    EnvioInternacional[] enviosInternacionales = {new EnvioInternacional(25000)};
 
-  public static void imprimirTiempoDeEnvio(Envio[] envios){
-    for (Envio coche : envios) {
-      if(coche.tipo.equals("Municipal")) System.out.println("Tiempo envio 12 horas");
-      if(coche.tipo.equals("Intermunicipal")) System.out.println("Tiempo envio 36 horas");
-      if(coche.tipo.equals("Internacional")) System.out.println("Tiempo envio 90 horas");
+    for(EnvioMunicipal envios: enviosMunicipales){
+      envios.imprimirTiempoEnvio();
+      envios.crearTipoEnvio();
+    }
+
+    for(EnvioIntermunicipal envios: enviosIntermunicipales){
+      envios.imprimirTiempoEnvio();
+      envios.crearTipoEnvio();
+    }
+
+    for(EnvioInternacional envios: enviosInternacionales){
+      envios.imprimirTiempoEnvio();
+      envios.crearTipoEnvio();
     }
   }
 }
